@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Syafiq & Suliani - You're Invited!</title>
+    <!-- Tailwind CSS CDN for easy styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7e9e9; /* A soft, elegant background color */
+            margin: 0;
+            padding: 2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 600px;
+            width: 100%;
+            padding: 2rem;
+            border-radius: 1.5rem;
+            background: rgba(255, 255, 255, 0.8); /* Semi-transparent white background for content */
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .music-button {
+            transition: all 0.3s ease-in-out;
+        }
+
+        .music-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container mx-auto">
+        <h1 class="text-4xl md:text-5xl font-bold text-pink-600 mb-6">You're Invited!</h1>
+
+        <!-- Music control button -->
+        <button id="musicToggle" class="music-button bg-pink-500 text-white font-semibold py-3 px-6 rounded-full shadow-lg mb-8">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 inline-block mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.12 2-2.5 2S4 20.105 4 19s1.12-2 2.5-2S9 17.895 9 19zm12-3c0 1.105-1.12 2-2.5 2s-2.5-0.895-2.5-2s1.12-2 2.5-2s2.5 0.895 2.5 2zM9 10l12-3" />
+            </svg>
+            Play Music
+        </button>
+
+        <!-- Wedding Invitation from Canva -->
+        <div style="position: relative; width: 100%; height: 0; padding-top: 140.9524%; padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden; border-radius: 8px; will-change: transform;">
+            <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0;margin: 0;" src="https://www.canva.com/design/DAGyBIyX_o0/NET0GLrzSozsmYi5CcduuA/view?embed" allowfullscreen="allowfullscreen" allow="fullscreen"></iframe>
+        </div>
+
+        <a href="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAGyBIyX_o0&#x2F;NET0GLrzSozsmYi5CcduuA&#x2F;view?utm_content=DAGyBIyX_o0&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link" target="_blank" rel="noopener" class="text-sm text-gray-500 hover:text-pink-600 transition-colors duration-300">
+            Suliani dan Syafiq
+        </a>
+    </div>
+
+    <!-- Hidden audio element for background music -->
+    <audio id="background-music" loop>
+        <!-- Corrected Google Drive download link -->
+        <source src="https://drive.google.com/uc?export=download&id=1cUquSgS0oqRiwRev5vaW8Tt2djwc3vDR">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script>
+        const musicToggle = document.getElementById('musicToggle');
+        const backgroundMusic = document.getElementById('background-music');
+
+        musicToggle.addEventListener('click', () => {
+            if (backgroundMusic.paused) {
+                backgroundMusic.play();
+                musicToggle.textContent = 'Music Playing...';
+                musicToggle.classList.add('bg-pink-300');
+                musicToggle.disabled = true; // Disable button after click to prevent multiple starts
+            }
+        });
+    </script>
+
+</body>
+</html>
